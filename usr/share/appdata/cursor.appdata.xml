@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>cursor.desktop</id>
+	<metadata_license>https://cursor.com/terms-of-service</metadata_license>
+	<project_license>>https://cursor.com/terms-of-service</project_license>
+	<name>Cursor</name>
+	<url type="homepage">>https://cursor.com</url>
+	<summary>AI focused code editor based on Visual Studio Code.</summary>
+	<description>
+		<p>Cursor is a AI focused code editor based on Visual Studio Code, which adds Cursor's AI powered features to the mix that normally require extensions if running vanilla Visual Studio Code.</p>
+	</description>
+</component>
