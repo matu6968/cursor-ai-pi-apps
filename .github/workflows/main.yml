@@ -69,7 +69,7 @@ Architecture: arm64
 Maintainer: Cursor <hi@cursor.com>
 Homepage: https://cursor.com/
 Priority: optional
-Version: $VERSION
+Version: ${VERSION}
 Description: AI focused code editor based on Visual Studio Code.
 EOF
         chmod 0755 -R usr/share/cursor/*
