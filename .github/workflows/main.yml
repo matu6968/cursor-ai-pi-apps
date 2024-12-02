@@ -24,7 +24,7 @@ jobs:
     - name: Download AppImage
       run: |
         APPIMAGE_URL="https://downloader.cursor.sh/linux/appimage/arm64"
-        curl -LO "$APPIMAGE_URL"
+        curl -O -J "$APPIMAGE_URL"
         APPIMAGE_FILE=$(ls | grep cursor-.*arm64.AppImage)
         echo "Downloaded: $APPIMAGE_FILE"
         echo "APPIMAGE_FILE=$APPIMAGE_FILE" >> $GITHUB_ENV
