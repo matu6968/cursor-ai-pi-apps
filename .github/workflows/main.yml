@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-package:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-arm64
 
     steps:
     # Step 1: Checkout the repository
