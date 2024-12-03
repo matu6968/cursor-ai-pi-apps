@@ -15,9 +15,15 @@ jobs:
       uses: actions/checkout@v3
 
     # Step 2: Remove unnecessary files
-    - name: Clone Dependencies Repository
+    - name: Install dependencies
       run: |
-        rm -f LICENSE README.md
+        curl -O -J https://7-zip.org/a/7z2409-linux-x64.tar.xz
+        mkdir 7z
+        cd 7z
+        tar -xvJf ../7z2409-linux-x64.tar.xz
+        chmod +x 7zz 7zzs
+        cd ..
+        rm -f LICENSE README.md 7z2409-linux-x64.tar.xz
 
     # Step 3: Download AppImage file
     - name: Download AppImage
@@ -47,7 +53,7 @@ jobs:
       run: |
         mkdir squashfs-root
         cd squashfs-root
-        7z x "./$APPIMAGE_FILE"
+        ./../7z/7zz x "./$APPIMAGE_FILE"
         cd ..
 
     # Step 6: Copy files to the cloned repository
