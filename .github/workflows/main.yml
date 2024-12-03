@@ -8,7 +8,9 @@ on:
 
 jobs:
   build-and-package:
-    runs-on: ubuntu-arm64
+    runs-on:
+     - runs-on=${{ github.run_id }}
+     - runner=2cpu-linux-arm64
 
     steps:
     # Step 1: Checkout the repository
