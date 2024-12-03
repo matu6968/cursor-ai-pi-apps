@@ -55,11 +55,11 @@ cp -r DEBIAN cursor-deb
 cp -r usr cursor-deb 
 $file --appimage-extract || echo 'failed to extract files from AppImage'
 mkdir cursor-deb/usr/share/cursor 
-        cd cursor-deb
-        sed 's/Version: 0.43.5/Version: '$version'' DEBIAN/control
-        chmod 0755 -R usr/share/cursor/
-        chmod 0755 -R DEBIAN/
-        cd ..
+cd cursor-deb
+sed 's/Version: 0.43.5/Version: '$version'' DEBIAN/control
+chmod 0755 -R usr/share/cursor/
+chmod 0755 -R DEBIAN/
+cd ..
 cp -r squashfs-root/* cursor-deb/usr/share/cursor
 cd cursor-deb
 dpkg-deb --build . ../cursor_"$version"_arm64.deb || echo "failed to build package"
