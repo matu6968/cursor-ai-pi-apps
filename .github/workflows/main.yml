@@ -44,10 +44,14 @@ jobs:
         fi
 
     # Step 5: Extract AppImage
+    # For now use a external tool to extract the appimage file
+    # until release and public arm64 runners are available
     - name: Extract AppImage
       run: |
-        chmod +x "$APPIMAGE_FILE"
-        "./$APPIMAGE_FILE" --appimage-extract
+        mkdir squashfs-root
+        cd squashfs-root
+        7z x "./$APPIMAGE_FILE"
+        cd ..
 
     # Step 6: Copy files to the cloned repository
     - name: Copy Files
