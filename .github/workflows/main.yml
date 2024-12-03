@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-  pull_request:
+  release:
+    types:
+      - created
 
 jobs:
   build-and-package:
@@ -14,7 +16,7 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    # Step 2: Remove unnecessary files
+    # Step 2: Install dependencies
     - name: Install dependencies
       run: |
         curl -O -J https://7-zip.org/a/7z2409-linux-x64.tar.xz
@@ -47,8 +49,6 @@ jobs:
         fi
 
     # Step 5: Extract AppImage
-    # For now use a external tool to extract the appimage file
-    # until release and public arm64 runners are available
     - name: Extract AppImage
       run: |
         mkdir squashfs-root
