@@ -53,7 +53,7 @@ jobs:
       run: |
         mkdir squashfs-root
         cd squashfs-root
-        ./../7z/7zz x "./$APPIMAGE_FILE"
+        ./../7z/7zz x "../$APPIMAGE_FILE"
         cd ..
 
     # Step 6: Copy files to the cloned repository
